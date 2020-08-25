@@ -1,6 +1,12 @@
-pandoc: 2.7.3
+pandoc: 2.3.1
 pkgdown: 1.5.1
 pkgdown_sha: ~
-articles: []
-last_built: 2020-07-28T02:22Z
+articles:
+  data-protocols: data-protocols.html
+  experimental-designs: experimental-designs.html
+  instrument-designs: instrument-designs.html
+  method-protocols: method-protocols.html
+  prototype-designs: prototype-designs.html
+  research-design: research-design.html
+last_built: 2020-08-25T18:36Z
 

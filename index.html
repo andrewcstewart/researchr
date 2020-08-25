@@ -46,6 +46,33 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/data-protocols.html">Data Protocols</a>
+    </li>
+    <li>
+      <a href="articles/experimental-designs.html">Experiments</a>
+    </li>
+    <li>
+      <a href="articles/instrument-designs.html">Instruments</a>
+    </li>
+    <li>
+      <a href="articles/method-protocols.html">Method Protocols</a>
+    </li>
+    <li>
+      <a href="articles/prototype-designs.html">Prototypes</a>
+    </li>
+    <li>
+      <a href="articles/research-design.html">Research Designs</a>
+    </li>
+  </ul>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
 </div>
@@ -63,14 +90,149 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#researchr" class="anchor"></a>researchr</h1></div>
 <p>RMarkdown templates for research design documentation.</p>
+<div id="overview" class="section level2">
+<h2 class="hasAnchor">
+<a href="#overview" class="anchor"></a>Overview</h2>
+<p>The primary purpose of <code>researchr</code> is to aid in the design of research projects, particularly data science projects, by offering a lightweight composable frameork of document templates and functions to track and manage a research design throughout the course of its history.</p>
+<p>The emergence of the data science Notebook and its ensuing ecosystem of tutorials tends to create the impression that data science can always be captured in a concise, linear sequence of steps within a single session. It makes sense for those tutorials to consist of single notebooks rather than require readers to reference a series of separate notebooks, but in practice real life is much more messy. Research projects typically span long lengths of time, attempt several different approaches and combinations of approaches, and iteratively build off of each previous version of work. A more accurate picture might be a network of notebooks ; and that’s basically what <code>researchr</code> is.</p>
+<p>There’s a couple key features that <code>researchr</code> offers to improve the scientist’s quality of life:</p>
+<p>1) Breaks down research projects into a few different interrelated components, which affords more flexibility in terms of conceptual composition of procedures and aids in more deliberative design of your research. 2) Removes the distraction of naming and organizing your folder structure, which is by far the most challenging problem in data science. 3) Structures the otherwise unstructured world of research code without imposing overly complex and burdensome software frameworks.</p>
+<p>There are plenty of tools out there to help data science projects including workflow managers, data versioning tools, metric collectors, reproducibility automation, etc. <code>researchr</code> doesn’t attempt to do any of those things, but it should compliment any choice of those tools nicely.</p>
+<p>At its core, the package consists of two primary components:</p>
+<p>1) RMarkdown templates for protocols and designs. 2) Functions and metadata for managing the research design.</p>
+</div>
+<div id="research-design" class="section level2">
+<h2 class="hasAnchor">
+<a href="#research-design" class="anchor"></a>Research Design</h2>
+<p>The research design itself consists simply of an RStudio project and some <code>yaml</code> encoded metadata files, as well as RMarkdown files that document the research.</p>
+<div id="data-protocols" class="section level3">
+<h3 class="hasAnchor">
+<a href="#data-protocols" class="anchor"></a>Data Protocols</h3>
+<p>Data protocols document the collection of datasets used throughout the research design. A data protocol may document a single static dataset, or parameterized procedure for repeated collections. Each protocol is ideally oriented around a SQL query, encouraging collection from pre-engineered data sources. The basic idea is to isolate and abstract away data collection from the rest of the research so that downstream analsyis does not reproduce this every time. This is also a good step to perform any standard cleaning and transformations.</p>
+<p>Examples:</p>
 <ul>
-<li><p>research design document</p></li>
-<li><p>data collection protocols</p></li>
-<li><p>method protocols</p></li>
-<li><p>instrumentation designs</p></li>
-<li><p>experimental designs</p></li>
-<li><p>prototype designs</p></li>
+<li>Database query</li>
+<li>Reference to remote storage (S3, etc)</li>
+<li>Survey design</li>
+<li>Generative process (for simulators)</li>
 </ul>
+</div>
+<div id="method-protocols" class="section level3">
+<h3 class="hasAnchor">
+<a href="#method-protocols" class="anchor"></a>Method Protocols</h3>
+<p>Method protocols document any sort of analaysis. These make up the bulk of any research design. Protocols consist of several analytical steps, where each step typically requires some investigative evaluation. Each method protocol references one or more data protocols, and may also depend on an instrument. Generally speaking, method protocols are used within experimental designs, but they can also be used standalone; for example, as part of an EDA of a data protocol,</p>
+<p>Examples:</p>
+<ul>
+<li>EDA</li>
+<li>Correlation analysis</li>
+<li>Power analysis</li>
+<li>Hypothesis test</li>
+<li>Model evaluation</li>
+<li>
+</li>
+</ul>
+</div>
+<div id="instrument-designs" class="section level3">
+<h3 class="hasAnchor">
+<a href="#instrument-designs" class="anchor"></a>Instrument Designs</h3>
+<p>Instruments are mechanisms constructed to investigations and experiments. These are useful for designing recurring complex processes whose primary value is some end product rather than insight at each procedural step. They can be thought of as automated methods, where individual steps in the procedure do not necessary merit individual inspection and documentation.</p>
+<p>The design typically consists of one or more R files containing either libraries or scripts, or any other executables from workflow frameworks (<code>dvc</code>, <code>mlflow</code>, <code>workflowr</code>, etc). It should also include an RMarkdown file that documents the instrument’s usage and design, including diagrams and technical details.</p>
+<p>Examples:</p>
+<ul>
+<li>Algorithms</li>
+<li>Workflows (Model training, Transformation)</li>
+<li>Simulators</li>
+<li>Telemetry (Plots, Dashboards, etc)</li>
+</ul>
+</div>
+<div id="experiment-designs" class="section level3">
+<h3 class="hasAnchor">
+<a href="#experiment-designs" class="anchor"></a>Experiment Designs</h3>
+<ul>
+<li>Experiments are empirical procedures that arbitrate competing models or hypotheses.</li>
+<li>An experimental design documents a series of related experiments across varying factors.</li>
+<li>A design includes the application of one or more method protocols and may also include instruments.</li>
+<li>
+</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>A/B Test</li>
+<li>ML experiment</li>
+<li>Optimization</li>
+</ul>
+</div>
+<div id="protoype-designs" class="section level3">
+<h3 class="hasAnchor">
+<a href="#protoype-designs" class="anchor"></a>Protoype Designs</h3>
+<ul>
+<li>A prototype is an early sample, model, or release of a product built to test a concept or process.</li>
+<li>In <code>researchr</code>, a prototype represents some form of product from the research. In the simplest sense, this may just comprise of some brief documentation describing the product or feature, accompanied by a summary of the experimental results leading to the design decisions. While you can certainly develop simple prototype products in a <code>researchr</code> project, for anything more complicated than a simple app you should probably use a dedicated repository / project. Prototypes are also a good way to represent</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>A <code>shiny</code> App</li>
+<li>A <code>plumber</code> API</li>
+<li>A publication report</li>
+</ul>
+<p>A prototype can also be referenced by a data collection protocol, thus creating a feedback loop from the sequence of research components. This is a useful way to document and track a long term series of product development experiments. Also, while most use cases envision data protocols as the initial steps, this allows for research designs with different starting points.</p>
+</div>
+</div>
+<div id="components" class="section level2">
+<h2 class="hasAnchor">
+<a href="#components" class="anchor"></a>Components</h2>
+<div id="project-types" class="section level3">
+<h3 class="hasAnchor">
+<a href="#project-types" class="anchor"></a>Project types</h3>
+<ul>
+<li>research design document</li>
+</ul>
+</div>
+<div id="document-types" class="section level3">
+<h3 class="hasAnchor">
+<a href="#document-types" class="anchor"></a>Document types</h3>
+<ul>
+<li>[D] data protocols</li>
+<li>[M] method protocols</li>
+<li>[I] instrumentation designs</li>
+<li>[E] experimental designs</li>
+<li>[P] prototype designs</li>
+</ul>
+</div>
+<div id="functions" class="section level3">
+<h3 class="hasAnchor">
+<a href="#functions" class="anchor"></a>Functions</h3>
+<ul>
+<li><code>new_research</code></li>
+<li><code>add_data</code></li>
+<li><code>add_method</code></li>
+<li><code>add_instrument</code></li>
+<li><code>add_experiment</code></li>
+<li><code>add_prototype</code></li>
+<li>
+<code>_design_inventory</code> - traverses the directory tree to generate an inventory of current design state.</li>
+<li>reference functions (ie, <code>here</code> for “M-1”)</li>
+<li>id generators</li>
+<li>plot the design graph</li>
+<li>generate design table (data.frame)</li>
+<li>
+</li>
+</ul>
+</div>
+</div>
+<div id="likely-requirements" class="section level2">
+<h2 class="hasAnchor">
+<a href="#likely-requirements" class="anchor"></a>Likely requirements</h2>
+<ul>
+<li><code>fs</code></li>
+<li><code>yaml</code></li>
+<li><code>DiagrammR</code></li>
+</ul>
+</div>
+<div id="frequently-asked-questions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#frequently-asked-questions" class="anchor"></a>Frequently Asked Questions</h2>
+</div>
 </div>
   </div>
 
