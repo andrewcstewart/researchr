@@ -1,0 +1,60 @@
+---
+title: "Research Designs"
+---
+
+The research design itself consists simply of an RStudio project and some `yaml` encoded metadata files, as well as RMarkdown files that document the research. 
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+#library(researchr)
+library(DiagrammeR)
+```
+
+
+
+```{r}
+mermaid("
+graph LR
+  DC-->MP
+  DC-->ID
+  MP-->ED
+  ID-->ED
+  ID-->MP
+  MP-->PT
+  ED-->PT
+  PT-->DC
+")
+```
+
+
+
+```{r}
+mermaid("
+graph LR
+  DC1-->MP1
+  DC1-->MP2
+  DC1-->MP3
+  MP2-->ED1
+  MP3-->ED1
+  ID1-->ED1
+  ED1-->PT1
+  DC2-->MP4
+  MP4-->PT2
+  PT2-->DC3
+  DC3-->ID2
+  DC3-->MP4
+  ID2-->MP5
+  MP5-->ED2
+")
+```
+
+
+
+
+
