@@ -1,5 +1,5 @@
 Package: researchr
-Title: What the Package Does (One Line, Title Case)
+Title: RMarkdown templates for research design documentation.
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Andrew",
@@ -7,12 +7,13 @@ Authors@R:
            role = c("aut", "cre"),
            email = "andrew.c.stewart@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: The primary purpose of researchr is to aid in the design of research projects, particularly data science projects, by offering a lightweight composable frameork of document templates and functions to track and manage a research design throughout the course of its history.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 URL: https://andrewcstewart.github.io/researchr/, https://github.com/andrewcstewart/researchr
+BugReports: https://github.com/andrewcstewart/researchr/issues
 Suggests: 
     rmarkdown

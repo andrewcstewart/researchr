@@ -2,6 +2,18 @@
 title: "Method Protocols"
 ---
 
+### Method Protocols
+
+Method protocols document any sort of analaysis. These make up the bulk of any research design. Protocols consist of several analytical steps, where each step typically requires some investigative evaluation. Each method protocol references one or more data protocols, and may also depend on an instrument. Generally speaking, method protocols are used within experimental designs, but they can also be used standalone; for example, as part of an EDA of a data protocol, 
+
+Examples:
+
+- EDA
+- Correlation analysis
+- Power analysis
+- Hypothesis test
+- Model evaluation
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

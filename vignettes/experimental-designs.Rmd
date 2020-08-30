@@ -2,6 +2,16 @@
 title: "Experiments"
 ---
 
+- Experiments are empirical procedures that arbitrate competing models or hypotheses.
+- An experimental design documents a series of related experiments across varying factors. 
+- A design includes the application of one or more method protocols and may also include instruments.
+
+Examples:
+
+- A/B Test
+- ML experiment
+- Optimization
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

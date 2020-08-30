@@ -2,6 +2,17 @@
 title: "Prototypes"
 ---
 
+- A prototype is an early sample, model, or release of a product built to test a concept or process.
+- In `researchr`, a prototype represents some form of product from the research. In the simplest sense, this may just comprise of some brief documentation describing the product or feature, accompanied by a summary of the experimental results leading to the design decisions. While you can certainly develop simple prototype products in a `researchr` project, for anything more complicated than a simple app you should probably use a dedicated repository / project. Prototypes are also a good way to represent 
+
+Examples:
+
+- A `shiny` App
+- A `plumber` API
+- A publication report
+
+A prototype can also be referenced by a data collection protocol, thus creating a feedback loop from the sequence of research components. This is a useful way to document and track a long term series of product development experiments. Also, while most use cases envision data protocols as the initial steps, this allows for research designs with different starting points. 
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

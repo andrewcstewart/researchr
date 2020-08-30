@@ -2,6 +2,15 @@
 title: "Data Protocols"
 ---
 
+Data protocols document the collection of datasets used throughout the research design. A data protocol may document a single static dataset, or parameterized procedure for repeated collections. Each protocol is ideally oriented around a SQL query, encouraging collection from pre-engineered data sources. The basic idea is to isolate and abstract away data collection from the rest of the research so that downstream analsyis does not reproduce this every time. This is also a good step to perform any standard cleaning and transformations.
+
+Examples:
+
+- Database query
+- Reference to remote storage (S3, etc)
+- Survey design
+- Generative process (for simulators)
+
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,

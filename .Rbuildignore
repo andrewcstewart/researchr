@@ -6,3 +6,4 @@
 ^\.github$
 ^LICENSE\.md$
 ^vignettes/articles$
+^\.github/workflows$
