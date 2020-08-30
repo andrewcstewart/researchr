@@ -17,3 +17,5 @@ URL: https://andrewcstewart.github.io/researchr/, https://github.com/andrewcstew
 BugReports: https://github.com/andrewcstewart/researchr/issues
 Suggests: 
     rmarkdown
+Imports: 
+    DiagrammeR
