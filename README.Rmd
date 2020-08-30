@@ -9,6 +9,8 @@ RMarkdown templates for research design documentation.
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+![pkgdown](https://github.com/andrewcstewart/researchr/workflows/pkgdown/badge.svg)
+[![CRAN status](https://www.r-pkg.org/badges/version/researchr)](https://CRAN.R-project.org/package=researchr)
 <!-- badges: end -->
 
 ## Installation
